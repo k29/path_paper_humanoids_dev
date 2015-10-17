@@ -41,7 +41,7 @@ Geometrical approach to On line Trajectory generation, Obstacle avoidance and Fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
-This paper presents a unique real time technique for   path generation in dynamic environment using simple geometry, suitable for humanoid robots. We show that the proposed algorithm reduces computation to find the optimal collision free path by utilizing the geometrical shapes of the obstacles  to navigate from a known initial point to final point. The trajectory is then translated to known parameters of humanoid gait model thus effectively computing the footsteps for the robot. This algorithm has been simulated, implemented and tested on humanoid robot AcYut, indigenously developed at Centre for Robotics and Intelligence Systems, BITS-Pilani.\\
+This paper presents a unique real time technique for   path generation in dynamic environment using simple geometry, suitable for humanoid robots. We show that the proposed algorithm reduces computation to find the optimal collision free path by utilizing the geometrical shapes of the obstacles  to navigate from a known initial point to final point. The trajectory is then translated to known parameters of humanoid gait model thus effectively computing the footsteps for the robot. This algorithm has been simulated, implemented and tested on humanoid robot AcYut, developed at Centre for Robotics and Intelligence Systems, BITS-Pilani.\\
 \end{abstract}
 
 \begin{keywords}
@@ -66,7 +66,7 @@ A comprehensive solution to motion planning is discussed in [8]. The approach be
 The driving intent behind this paper is to make a comprehensive motion model system which can work in real time. The idea of path planning and then footstep planning is outlined in such a way that it can be easily ported to another humanoid system without having to make any low level changes.
 
 \section{Robot Test Platform}
-The implementation and testing of the algorithm is carried out on a indigenously developed humanoid AcYut. The humanoid has been used in the recent versions of Robocup tournament and has 24 degrees of freedom. The environment is perceived by a IDS UI-1221LE fish eye lens at 74 fps. The humanoid is equipped with an onboard x86 Intel Atom processor running at 1.8 GHz. It has 4 Gb of RAM and 32 GB of persistent flash memory. The processor has low power consumption with the trade off of low computational power. Hence the requirement of developing software systems and algorithms with low computational complexity.
+The implementation and testing of the algorithm is carried out on a developed humanoid AcYut. The humanoid has been used in the recent versions of Robocup tournament and has 24 degrees of freedom. The environment is perceived by a IDS UI-1221LE fish eye lens at 74 fps. The humanoid is equipped with an onboard x86 Intel Atom processor running at 1.8 GHz. It has 4 Gb of RAM and 32 GB of persistent flash memory. The processor has low power consumption with the trade off of low computational power. Hence the requirement of developing software systems and algorithms with low computational complexity.
 
 \section{Methodology}
 \subsection{Usage Scenario}
@@ -131,7 +131,7 @@ Joining line between the start and end points is not sufficient to give complete
 Another use of introduction of dummy obstacles is to start the tracing of the path smoothly. It often happens that the bot is facing a direction and need to start walking at a specified angle to the current gait vector. Since instantaneous turning of the point can prove to be difficulty or time consuming an obstacle can be placed to ensure smooth transition.
 
 \subsection{Edge Cases and Erroneous Inputs}
-Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot progressively reaching its target. In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the frame rate is as high as 50 fps these instance do not matter much and are taken care of in the subsequent frames.
+Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot progressively reaching its target. In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the frame rate is as high as 50 fps these instances do not matter much and are taken care of in the subsequent frames.
 \\ 
 Other cases include when obstacles intersect. This may be because of the erroneous inputs if obstacles are behind one another or because of the generic assumption that obstacles all have the same radius. This in addition to the fact that obstacles radius is its radius added with the half of radius of the bot itself so that the test subject can easily maneuver between obstacles. To solve this problem any two such intersecting obstacles are treated as one obstacle, by making a best fitting polygon usually an ellipse on top of the obstacles. The algorithm can be now executed normally considering this new ellipse.
 
@@ -309,7 +309,7 @@ path-planning,
 \bibitem{11} S. Kajita, F. Kanehiro, K. Kaneko, K. Yokoi and H. Hirukawa, "The 3D linear inverted
 pendulum model: a simple modeling for a biped walking pattern generation", \emph{In
 IROS}, 2001, Vol. 1, pp. 239-246
-\bibitem{12} H. Alt and E. Welzi, Visibility Graphs and Obstacle Avoiding shortest paths, \emph{Zeitschrift für Operations Research},1998
+\bibitem{12} H. Alt and E. Welzi, Visibility Graphs and Obstacle Avoiding shortest paths, \emph{Zeitschrift fÃ¼r Operations Research},1998
 
 
 \end{thebibliography}
