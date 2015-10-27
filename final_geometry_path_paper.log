@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  27 OCT 2015 15:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  27 OCT 2015 15:18
 entering extended mode
 **G:/My*Box*Files/Default*Sync*Folder/Git/path_paper_humanoids_dev/final_geomet
 ry_path_paper.tex
@@ -410,9 +410,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--281
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [5] <test2.jpg, id=41, 2265.46375pt x 1324.95pt>
 File: test2.jpg Graphic file (type jpg)
  <use test2.jpg>
@@ -487,7 +484,7 @@ ts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
 s/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final_geometry_path_paper.pdf (7 pages, 613120 bytes).
+Output written on final_geometry_path_paper.pdf (7 pages, 613309 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
