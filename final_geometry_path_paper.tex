@@ -12,7 +12,7 @@
 \usepackage[cmex10]{amsmath}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-
+\usepackage{enumerate}
 \title{\LARGE \bf
 Geometrical approach to On line Trajectory generation, Obstacle avoidance and Footstep planning for a Humanoid Robot
 }
@@ -142,14 +142,70 @@ Other cases include when obstacles intersect. This may be because of the erroneo
 \end{center}  
 \end{figure}
 
-\subsection{Step Planning}
-Once the path is generated it is then mapped to the humanoid gait
-Humanoid walk comprises the following movements in a cycle
-\begin{enumerate}
-  \item Single Support Phase (SSP): A leg is raised from the ground, with the other is the support foot.
-  \item Double Support Phase (DSP): Both feet are on the ground.
-  \item The moving leg and support leg are interchanged. 
+\subsection{Hierarchical Controller}
+The hierarchical motion controller implemented on the humanoid is presented below for providing a clear picture of the step planning interface. 
+The placement of the footstep planning interface in the behavioral chain of
+events is between the path planning algorithm and the high-level position
+controller of the humanoid gait generation module. The
+controller is hierarchically structured into three components:
+	\begin{enumerate}[A)]
+\item Position Control Module
+\item Gait Generation Module
+\item Inverse Kinematics Module
+
+The salient features of the modules are discussed below:
 \end{enumerate}
+	\begin{enumerate}[A)]
+  \item A high level 3 Dimensional step position S is
+  supplied to the gait generation controller. S is defined as:
+  	
+  	\begin{center}$S \in (Z, Y, \theta)$\end{center}
+ where Z and Y are the lateral and sagittal displacements of the
+ free leg with respect to the current 2 dimensional projection of the CoM on
+  the ground. $\theta$ describes the rotation of the foot with respect
+  to the present orientation of the humanoid. 
+
+The limits on acceptable step position values arise from theoretical constraints of the implemented motion generator and the physical constraints of the humanoid. 
+In the humanoid under discussion, theoretical limits are placed on the range of attainable step positions which derive from a range of attainable velocities.
+The step planning interface is responsible for generating acceptable step positions, and the specific implementation of such an interface is discussed in the next subsection.
+  	
+  $S$ is presented to the Gait Generation Module as a commanded target position at the end of the step.
+  \item Although the step parameter is commanded on the free leg, the final velocity attained after the step is precomputed in order
+to present a target velocity for the support leg trajectories. In the humanoid under discussion the support leg operates on 3D LIPM trajectories parameterized by current velocity and target velocity. Therefore the commanded step position is used to compute the final velocity, which is used to generate stable 3D LIPM trajectories. 
+  
+  The present position in the trajectory is advanced with time at every frame,
+  and the new coordinates are forwarded to the Inverse Kinematics (IK) Module.
+  \item Joint angles, and the corresponding motor
+  positions are calculated by the IK as a solution to the present step
+  coordinates presented by the gait generation module at each frame. The motors
+  are then instructed to attain these values such that the desired motion can be
+  obtained.
+\end{enumerate}
+
+The reason for such a hierarchical structure is that it allows changes at each
+tier without requiring changes to the other tiers on hierarchy. For instance,
+the IK module can be adapted for a humanoid robot with a
+different mechanical structure, without having to change the gait generation
+module. Similarly, the present gait generation algorithm can be freely changed
+for purposes of experimentation without making any changes in the IK module. However, the step planning interface must be designed to generate acceptable step positions and may require changes depending on the gait generation algorithm being used and the mechanical limitations of the humanoid.
+
+\subsection{Step Planning Interface}
+The step planning interface decomposes the path into discrete footsteps which result in the robot following the desired trajectory.
+
+The path is first broken down into two components:
+\begin{itemize}
+  \item Straight Line Path
+  \item Circular Path
+\end{itemize}
+
+When the designated trajectory is a straight line, the robot accelerates to its maximum velocity and footstep vectors are generated for the maximum step length and velocity until the distance covered by the robot is equivalent to the straight line length. 
+ 
+When the trajectory is circular, the step planning interface generates footstep vectors using the radius of the circle and the separation of the feet. Each step advances the angle turned by the $\theta$ component of the step vector. When the target turning angle is achieved, the robot will have traversed the circular arc with the desired turning radius. It is not possible to have a constant velocity when navigating a circular path, because the steps taken by the foot on the inner side of the circle are shorter than the outer foot. Therefore, the velocity stabilizes by oscillating between two different values. \\ 
+The transition between a straight line trajectory to a circular one and vice versa must be handled smoothly since at any frame the new path generated may possess a straight line or a circle. Given the present velocity and step location, the interface must generate stable transition of velocity (acceleration or deceleration) to adapt to the new trajectory. This situation is accommodated by allowing a margin of one or two steps to transition safely to the new trajectory. The inaccuracy introduced by this margin is negligible due to the high step frequency of the robot.
+
+The step planning interface needs to be constrained in some manner to prevent drastic sudden changes in the velocity of the humanoid. Since the robot is presented with an online path planner, the robot may be asked to accomodate changes in path radius at each step.
+In this humanoid, the constraints are derived from a reformulation of the standard 3D LIPM equations:
+
 3D Linear Inverted Pendulum Model describes the motion of the Centre of Mass (CoM) in the robot[12]. The motion of support leg is opposite of the CoM, since the support leg behaves as a pivot which moves the CoM of the robot. Therefore the 3D LIPM algorithm can be used to develop a relation between step lengths and CoM velocities. The motion of the robot's supporting leg is defined by the x-variable in the Eq 1. Tc and Ts are constants, Ts being the SSP time of the robot. The initial and final states of the bot (before and after the step) are represented by i and f. Velocity and position are denoted by $v$ and $x$.
 \\
 
@@ -157,7 +213,9 @@ Humanoid walk comprises the following movements in a cycle
 \left(\begin{array}{c}x_{f}\\\\ v_{f}\end{array}\right)=\left(\begin{array}{cc}\cosh\left(\frac{T_{s}}{T_{c}}\right) & T_{c}\sinh\left(\frac{T_{s}}{T_{c}}\right) \\\\ \frac{\sinh\left(\frac{T_{s}}{T_{c}}\right)}{T_{c}} & \cosh\left(\frac{T_{s}}{T_{c}}\right)\end{array}\right)\left(\begin{array}{c}x_{i}\\\\ v_{i}\end{array}\right)
 \end{equation}
 
-It is convenient to rewrite the above equations for the derivation as 
+Since the step planner only observes discrete footsteps and not any arbitrary moment in time, the $T_{s}$ is treated as the constant end-of-step time, instead of the variable time $t$. During trajectory generation the variable $T_{s}$ is replaced by current step time $t$, which reaches the value $T_{s}$ at the end of the step.
+
+The above equations are reformulated as:
 \begin{equation}
 x_{f} = A\sinh\left(T_{s}/T_{c} + \phi\right)
 \end{equation}
@@ -175,12 +233,13 @@ where,
  introduces the assumption that the humanoid only moves forward, and does not
  perform maneuvers such as a back walk. This implementation also introduces
  certain constraints on the maximum and minimum future velocity relative to
- the present velocity. However this reformulation is acceptable on humanoid robots since
- back walk can be modeled by mirroring the forward walk with a transitional motion in place, 
- and using negative velocities to reverse the direction of motion.\\
- By observing these constraints, a theoretical limit is
- placed on the acceleration of the humanoid which serves to restrain its motion and prevent it from attempting to increase its velocity excessively in a single step. In order to develop an effective Walk-Path interface, one must generate footstep positions which obey these constraints. The constraints are derived in
- the form of maximum and minimum ratios of initial and final velocity over a single step $\left(v_{f}/v_{i}\right)$\\
+ the present velocity. The reformulation is carried out for the purpose of deriving these constraints,
+thereby restraining the motion of the humanoid by preventing it from drastic changes in velocity. The standard LIPM equations suffice for changing the humanoid's state from stationary to a moving
+initial velocity, and for back walk. Alternatively, these constraints may be forgone in favor of experimentally derived limits on acceleration and deceleration, and the equations which follow below 
+represent a theoretically obtainable limit, which need not be observed in the standard LIPM formulation.
+\\
+The constraints are derived in
+ the form of maximum and minimum ratios of initial and final velocity over a single step $\left(v_{f}/v_{i}\right)$.\\
  The constraints are derived to obtain the following range:
 
  \begin{equation}
@@ -202,15 +261,7 @@ where,
  p=\cosh\left(\frac{T_s}{T_c}\right)
  \end{equation}
 It must be noted that the above range is independent of all other earlier states, such as $v_i$ and $y_i$, which means that the range applies to any step considered independently.\\
- The footstep planning interface computes step positions which obey the specified constraints. The motion is broadly divided into two categories:
-\begin{itemize}
-  \item Straight Line Path
-  \item Circular Path
-\end{itemize}
-When the designated trajectory is a straight line, the robot accelerates to its maximum velocity at a rate which obeys the velocity constraints. When the trajectory is circular, the robot must decrease its velocity to avoid instability. However, it is not possible to have a constant velocity when navigating a circular path, because the steps taken by the foot on the inner side of the circle are shorter than the outer foot. Therefore, the velocity stabilizes by oscillating between two different values. \\
-A second consideration is the transition between a straight line trajectory to a circular one, and vice versa. At any frame the new path generated may possess a straight line or a circle. Given the present velocity and step location, the interface must generate stable transition of velocity (acceleration or deceleration) to adapt to the new trajectory. This situation is accommodated by allowing a margin of one or two steps to transition safely to the new trajectory. The inaccuracy introduced by this margin is negligible due to the high step frequency of the robot.
-\\
-The footstep positions generated by a given path have been pictorially presented in Fig 4. It may be observed from the image that the step lengths are considerably less along the circular arcs. This indicates the decreased velocity of the robot when turning.
+The footstep positions generated by a given path have been pictorially presented in Fig 4. Each circle indicates where the humanoid will place its foot. It may be observed from the image that the step lengths are considerably less along the circular arcs. This indicates the decreased velocity of the robot when turning. Furthermore, the first two steps on the circle possess a step length which is shorter than the maximum step length, but not equal to the step length of the feet during the circular motion. This indicates the transition from maximum velocity to the circular velocity, with two intermediate steps to smoothen the transition. If the velocity constraints described above were not in place, the circular trajectory would have resulted in an immediate velocity drop, leading to instability. This transition is all the more critical in the scenario where the online path alternately generated a line and a circle, which would result in a sudden transition from maximum velocity to circular velocity, and then back to maximum velocity. The same intermediate steps may be observed whenever the robot exits the circle.
 \begin{figure}[h]  
 \begin{center}  
 \includegraphics[scale=01.0]{footstep.jpg}  
