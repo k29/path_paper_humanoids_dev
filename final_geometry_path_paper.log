@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  27 OCT 2015 15:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  27 OCT 2015 15:32
 entering extended mode
 **G:/My*Box*Files/Default*Sync*Folder/Git/path_paper_humanoids_dev/final_geomet
 ry_path_paper.tex
@@ -463,11 +463,11 @@ ry_path_paper.aux") )
 Here is how much of TeX's memory you used:
  4109 strings out of 493921
  62605 string characters out of 3147279
- 130181 words of memory out of 3000000
+ 131181 words of memory out of 3000000
  7373 multiletter control sequences out of 15000+200000
  42888 words of font info for 83 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,10n,38p,1227b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,10n,38p,1235b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.e
 nc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program F
@@ -484,7 +484,7 @@ ts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
 s/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final_geometry_path_paper.pdf (7 pages, 613309 bytes).
+Output written on final_geometry_path_paper.pdf (7 pages, 613321 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
