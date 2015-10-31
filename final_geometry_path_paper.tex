@@ -121,11 +121,10 @@ Now to find the shortest path between the start and end point its all about find
 Joining line between the start and end points is not sufficient to give complete path between the two points. It often is required that the bot face a particular direction once it reaches the destination. In this scenario in particular, the humanoid is required to reach the ball, dribble or kick ball towards the goal posts to simply ensure that it does not shoot in the wrong direction or pass the ball to another player or hit another obstacle. One alternative is to simple reach the final point and then orient itself correctly, which leads to dependency on side walk in a circle. A much efficient solution would be consider the correct orientation in the path itself such that when the bot reaches the final point it finds itself oriented in a correct manner. This can be done by simple addition of dummy obstacles of required radius orthogonal to the facing direction, and choosing the final path intelligently. The diagrammatic representation is as shown in the figure 2. 
 \begin{figure}[h]  
 \begin{center}  
-\includegraphics[scale=0.42]{orientation_circle2.JPG}  
-\caption{\small \sl Use of orientation circle or dummy obstacles to align the robot correctly. The robot starts from point A, navigates it way around the obstacles $O_1$ and $O_2$, to reach the point B facing the direction G. .\label{fig:orientation}}  
+\includegraphics[scale=0.40]{orientation_circle2.JPG}  
+\caption{\small \sl Use of orientation circle or dummy obstacles to align the robot correctly. The robot starts from point A, navigates it way around the obstacles $O_1$ and $O_2$, to reach the point B facing the direction G. \label{fig:orientation}}  
 \end{center}  
 \end{figure} 
-\\
 Another use of introduction of dummy obstacles is to start the tracing of the path smoothly. It often happens that the bot is facing a direction and need to start walking at a specified angle to the current gait vector. Since instantaneous turning of the point can prove to be difficulty or time consuming an obstacle can be placed to ensure smooth transition.
 
 \subsection{Edge Cases and Erroneous Inputs}

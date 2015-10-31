@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  1 NOV 2015 00:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  1 NOV 2015 00:53
 entering extended mode
 **G:/My*Box*Files/Default*Sync*Folder/Git/path_paper_humanoids_dev/final_geomet
 ry_path_paper.tex
@@ -352,33 +352,26 @@ File: orientation_circle2.JPG Graphic file (type jpg)
 
 <use orientation_circle2.JPG>
 Package pdftex.def Info: orientation_circle2.JPG used on input line 124.
-(pdftex.def)             Requested size: 250.09766pt x 231.12692pt.
-
-Overfull \hbox (4.37955pt too wide) in paragraph at lines 124--125
- [] 
- []
-
+(pdftex.def)             Requested size: 238.18565pt x 220.11847pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 125.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 <intersection1.JPG, id=21, 754.82pt x 634.37pt>
 File: intersection1.JPG Graphic file (type jpg)
  <use intersection1.JPG>
-Package pdftex.def Info: intersection1.JPG used on input line 138.
+Package pdftex.def Info: intersection1.JPG used on input line 137.
 (pdftex.def)             Requested size: 226.44775pt x 190.31245pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/path_pape
-r.jpg> <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/orient
-ation_circle2.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+[3 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/path_paper
+.jpg> <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/orienta
+tion_circle2.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
@@ -386,27 +379,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--197
 on1.JPG>] <footstep.jpg, id=34, 272.51813pt x 231.11343pt>
 File: footstep.jpg Graphic file (type jpg)
  <use footstep.jpg>
-Package pdftex.def Info: footstep.jpg used on input line 253.
+Package pdftex.def Info: footstep.jpg used on input line 252.
 (pdftex.def)             Requested size: 272.51746pt x 231.11287pt.
 
-Overfull \hbox (26.79935pt too wide) in paragraph at lines 253--254
+Overfull \hbox (26.79935pt too wide) in paragraph at lines 252--253
  [] 
  []
 
 <test1.JPG, id=35, 828.09375pt x 663.47874pt>
 File: test1.JPG Graphic file (type jpg)
  <use test1.JPG>
-Package pdftex.def Info: test1.JPG used on input line 262.
+Package pdftex.def Info: test1.JPG used on input line 261.
 (pdftex.def)             Requested size: 248.43004pt x 199.04515pt.
 
-Overfull \hbox (2.71193pt too wide) in paragraph at lines 262--263
+Overfull \hbox (2.71193pt too wide) in paragraph at lines 261--262
  [] 
  []
 
 <test2.jpg, id=36, 2265.46375pt x 1324.95pt>
 File: test2.jpg Graphic file (type jpg)
  <use test2.jpg>
-Package pdftex.def Info: test2.jpg used on input line 269.
+Package pdftex.def Info: test2.jpg used on input line 268.
 (pdftex.def)             Requested size: 227.5967pt x 199.15848pt.
 
 
@@ -414,31 +407,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/footstep.j
 pg>]
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 282--282
+Underfull \hbox (badness 2351) in paragraph at lines 281--281
 []\OT1/ptm/b/n/10 No. of Op-er-a-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 []\OT1/ptm/m/n/10 Artificial Po-ten-tial
  []
 
 <testbed.jpg, id=42, 499.8675pt x 296.60812pt>
 File: testbed.jpg Graphic file (type jpg)
  <use testbed.jpg>
-Package pdftex.def Info: testbed.jpg used on input line 298.
+Package pdftex.def Info: testbed.jpg used on input line 297.
 (pdftex.def)             Requested size: 199.94345pt x 118.64114pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
 
  []
 
@@ -486,7 +479,7 @@ ts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
 s/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final_geometry_path_paper.pdf (7 pages, 611874 bytes).
+Output written on final_geometry_path_paper.pdf (7 pages, 611901 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
