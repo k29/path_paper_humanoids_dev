@@ -261,7 +261,8 @@ Visibility graph in this case consists of $(4*n+2)$ number of points in the wors
 \end{center}  
 \end{figure}
 The footstep planning interface along with the path planning were integrated with the behavior layer of the humanoid for testing purposes. For the experimental setup, two obstacles of radius 15 cm each were placed in the way of the bot and the ball. The bot had to navigate its way around the obstacles and align itself to hit the ball towards the goalposts. Both the scenarios where obstacles were static and dynamic were devised to test the efficacy of the algorithm. The tests were conducted for a total of more than 200 configurations in both cases. The advantages which were very apparent that the bot was able to correct its trajectory when it lost track of the path, due to losing its stability or some mechanical disturbances like friction. In the dynamic scenario some oscillation at a point were observed where the robot has to choose between two equally probable paths. Such edge cases can be easily be solved by either random selection or adjusting the frequency of mapping final path to the gait vector.\\
-The number of obstacles particularly in Robocup are small. There can be at a time a maximum of 3 obstacles. The worst case scenario that all three obstacles are in the robot's way, would involve the calculation of shortest path algorithm on a visibility graph consisting of just 14 points. When tested on the actual platform with 3 obstacles the average time taken to calculate was around 4 ms. This time is sufficient to give the entire cognition module a frame rate of 50 fps. Thus at such high frame rates, the dynamic nature of the obstacles is easily taken care of. The noise from the sensors like camera and the deviation of walk are thus handled naturally as a result of this. Fig. 5 shows the results of using the algorithm for an arbitrary configuration that might occur in a technical challenge in Robocup where the bot has to navigate its way and dribble a ball along with it. 
+The number of obstacles particularly in Robocup are small. In the worst case scenario it will result in a visibility graph of 15 nodes. At such high frame rates, the dynamic nature of the obstacles is easily taken care of. The noise from the sensors like camera and the deviation of walk are thus handled naturally as a result of this. Fig. 5 shows the results of using the algorithm for an arbitrary configuration.
+\\
 
 \begin{figure}[t]  
 \begin{center}  
@@ -270,11 +271,11 @@ The number of obstacles particularly in Robocup are small. There can be at a tim
 \end{center}  
 \end{figure}
 
+
+
 \section{Comparison}
-The algorithm presented here is compared with the other standard planning algorithms in terms of time taken, and no. of operations. The algorithm discussed in this paper is applicable to very specific cases, especially when the size of the obstacle is comparable to that of the robot itself. One of the main advantages of this geometry based planning algorithm is the non dependency on grids. Usually algorithms based on grids computationally expensive or do not have high resolution. The algorithm presented works in a grid less environment and only considers the nodes of interest, instead of analyzing each and every point on the map. Moreover it is not restricted to frame area of any size whatsoever, meaning the obstacles, final position can be located anywhere with reference to the navigating object without any cost to computation.\\
-For comparing this algorithm with the other standard ones in the literature we considered the setup of 2 obstacles along the way to the final point as shown in Fig. 6. The results of the comparison are as tabulated in Table 1.\\
-
-
+The algorithm presented here is compared with the other standard planning algorithms in terms of time taken, and no. of operations. The algorithm discussed in this paper is applicable to very specific cases, especially when the size of the obstacle is comparable to that of the robot itself. One of the main advantages of this geometry based planning algorithm is the non dependency on grids.Usually algorithms based on grids computationally expensive or do not have high resolution. The algorithm presented works in a grid less environment and only considers the nodes of interest, instead of analyzing each and every point on the map.
+\\
 \begin{center} 
     \begin{tabular}{| p{3cm} | l | }
     \hline
@@ -291,6 +292,11 @@ For comparing this algorithm with the other standard ones in the literature we c
 \begin{center}
 \small{Table 1: Comparison of Various Path Planning Algorithms\\}
 \end{center}
+ Moreover it is not restricted to frame area of any size whatsoever, meaning the obstacles, final position can be located anywhere with reference to the navigating object without any cost to computation.\\
+For comparing this algorithm with the other standard ones in the literature we considered the setup of 2 obstacles along the way to the final point as shown in Fig. 6. The results of the comparison are as tabulated in Table 1.\\
+
+
+
 
 \section{Conclusion}
 We have presented an unique way for path planning which is best suitable to the case when the obstacles size is comparable to the robots. In such cases we can take advantage of the robots shape which can be approximated to simple circles to find the best way possible around them using simple geometry. Therefore we reduce the number of node points on which a graph search can be applied. This reduces the computation time significantly thus giving better frame rates for the execution of code on an on board processor. Thus the dynamic nature of the robot soccer games can easily be taken care of along with any noise from the sensors and deviation from the walk. This is then ported to the 3D-LIPM walking pattern generator to adjust the footsteps, gait in such a way that the robot is stable while following the given path. 
