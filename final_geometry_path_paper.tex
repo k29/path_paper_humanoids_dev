@@ -276,16 +276,16 @@ The number of obstacles particularly in Robocup are small. There can be at a tim
 The algorithm presented here is compared with the other standard planning algorithms in terms of time taken, and no. of operations. The algorithm discussed in this paper is applicable to very specific cases, especially when the size of the obstacle is comparable to that of the robot itself. One of the main advantages of this geometry based planning algorithm is the non dependency on grids. Usually algorithms based on grids computationally expensive or do not have high resolution. The algorithm presented works in a grid less environment and only considers the nodes of interest, instead of analyzing each and every point on the map. Moreover it is not restricted to frame area of any size whatsoever, meaning the obstacles, final position can be located anywhere with reference to the navigating object without any cost to computation.\\
 For comparing this algorithm with the other standard ones in the literature we considered the setup of 2 obstacles along the way to the final point as shown in Fig. 7. The results of the comparison are as tabulated in Table 1.\\ 
 \begin{center}
-    \begin{tabular}{| p{3cm} | l | p{2.5cm} |}
+    \begin{tabular}{| p{3cm} | l | }
     \hline
-    \textbf{Algorithm} & \textbf{Time (ms)} & \textbf{No. of Operations} \\ \hline
-    Geometry based & 3.6 & 84  \\ \hline
-    $A^{*}$,  & 5 & 243  \\ \hline
-    Breadth First Search & 13  & 1013 \\
+    \textbf{Algorithm} & \textbf{Time (ms)}  \\ \hline
+    Geometry based & 3.6 \\ \hline
+    $A^{*}$,  & 5 \\ \hline
+    Breadth First Search & 13 \\
     \hline
-    Best First Search & 5  & 95 \\ \hline
-    Dijkstra & 18  & 1161 \\ \hline
-    Artificial Potential Mapping & 6 & 57\\ \hline
+    Best First Search & 5   \\ \hline
+    Dijkstra & 18 \\ \hline
+    Artificial Potential Mapping & 6 \\ \hline
     \end{tabular}
 \end{center}
 \begin{center}
