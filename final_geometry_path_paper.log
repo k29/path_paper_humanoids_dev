@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 03:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 03:56
 entering extended mode
 **final_geometry_path_paper.tex
 
@@ -349,30 +349,29 @@ File: path_paper.jpg Graphic file (type jpg)
  <use path_paper.jpg>
 Package pdftex.def Info: path_paper.jpg used on input line 110.
 (pdftex.def)             Requested size: 505.88135pt x 156.49026pt.
-
-<orientation_circle2.JPG, id=12, 595.47469pt x 550.30594pt>
+ [2]
+<orientation_circle2.JPG, id=19, 595.47469pt x 550.30594pt>
 File: orientation_circle2.JPG Graphic file (type jpg)
 
 <use orientation_circle2.JPG>
-Package pdftex.def Info: orientation_circle2.JPG used on input line 122.
+Package pdftex.def Info: orientation_circle2.JPG used on input line 124.
 (pdftex.def)             Requested size: 208.41925pt x 192.60995pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 123.
- [2]
-<intersection1.JPG, id=21, 754.82pt x 634.37pt>
+(Font)              <9> on input line 125.
+ <intersection1.JPG, id=21, 754.82pt x 634.37pt>
 File: intersection1.JPG Graphic file (type jpg)
- <use intersection1.JPG>
-Package pdftex.def Info: intersection1.JPG used on input line 135.
-(pdftex.def)             Requested size: 188.70454pt x 158.5921pt.
 
-[3 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/p
-ath_paper.jpg>] [4 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, H
-umanoids Korea/orientation_circle2.JPG> <C:/Users/Kaustubh/Documents/ieeeconf/P
-ath planning paper, Humanoids Korea/intersection1.JPG>]
-<footstep.jpg, id=36, 272.51813pt x 231.11343pt>
+<use intersection1.JPG>
+Package pdftex.def Info: intersection1.JPG used on input line 137.
+(pdftex.def)             Requested size: 188.70454pt x 158.5921pt.
+ [3 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/
+path_paper.jpg> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Huma
+noids Korea/orientation_circle2.JPG> <C:/Users/Kaustubh/Documents/ieeeconf/Path
+ planning paper, Humanoids Korea/intersection1.JPG>]
+[4] <footstep.jpg, id=36, 272.51813pt x 231.11343pt>
 File: footstep.jpg Graphic file (type jpg)
  <use footstep.jpg>
-Package pdftex.def Info: footstep.jpg used on input line 250.
+Package pdftex.def Info: footstep.jpg used on input line 252.
 (pdftex.def)             Requested size: 218.01479pt x 184.89099pt.
 
 
@@ -381,15 +380,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <test1.JPG, id=37, 828.09375pt x 663.47874pt>
 File: test1.JPG Graphic file (type jpg)
  <use test1.JPG>
-Package pdftex.def Info: test1.JPG used on input line 259.
+Package pdftex.def Info: test1.JPG used on input line 261.
 (pdftex.def)             Requested size: 207.02293pt x 165.86928pt.
 
-Underfull \hbox (badness 1661) in paragraph at lines 256--266
+Underfull \hbox (badness 1661) in paragraph at lines 258--268
  \OT1/ptm/m/n/10 The foot-step plan-ning in-ter-face along with the path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--266
+Underfull \hbox (badness 10000) in paragraph at lines 258--268
 
  []
 
@@ -399,25 +398,25 @@ ds Korea/test1.JPG>] <testbed.jpg, id=41, 499.8675pt x 296.60812pt>
 File: testbed.jpg Graphic file (type jpg)
 
 <use testbed.jpg>
-Package pdftex.def Info: testbed.jpg used on input line 269.
+Package pdftex.def Info: testbed.jpg used on input line 271.
 (pdftex.def)             Requested size: 199.94345pt x 118.64114pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 []\OT1/ptm/m/n/10 Artificial Po-ten-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
 
  []
 
@@ -464,7 +463,7 @@ fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
 /utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on final_geometry_path_paper.pdf (6 pages, 471267 bytes).
+Output written on final_geometry_path_paper.pdf (6 pages, 471178 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

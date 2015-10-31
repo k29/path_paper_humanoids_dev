@@ -117,16 +117,18 @@ Now, to find the shortest path between the start and end point, the shortest cos
 
 \subsection{Orientation Circles}
 Joining the line between the start and end points is not sufficient to give complete path between the two points. It is often required that the bot face a particular direction once it reaches the destination. In this scenario, the humanoid is required to reach the ball, dribble or kick ball towards the goal posts ensure that it does not shoot in the wrong direction. One alternative is to reach the final point and then orient correctly, which leads to dependency on side walk in a circle. A more efficient solution would be to consider the correct orientation in the path itself such that when the bot reaches the final point it finds itself oriented in a correct manner. This can be done by simple addition of dummy obstacles of required radius orthogonal to the facing direction, and choosing the final path intelligently. The diagrammatic representation is as shown in the figure 2. 
-\begin{figure}[b]  
+
+Another use of introduction of dummy obstacles is to start the tracing of the path smoothly. It often happens that the bot is facing a direction and need to start walking at a specified angle to the current gait vector. Since instantaneous turning of the point can prove to be difficulty or time consuming an obstacle can be placed to ensure smooth transition.  
+\begin{figure}[h]  
 \begin{center}  
 \includegraphics[scale=0.35]{orientation_circle2.JPG}  
 \caption{\small \sl Use of orientation circle or dummy obstacles to align the robot correctly. The robot starts from point A, navigates it way around the obstacles $O_1$ and $O_2$, to reach the point B facing the direction G. \label{fig:orientation}}  
 \end{center}  
-\end{figure} 
-Another use of introduction of dummy obstacles is to start the tracing of the path smoothly. It often happens that the bot is facing a direction and need to start walking at a specified angle to the current gait vector. Since instantaneous turning of the point can prove to be difficulty or time consuming an obstacle can be placed to ensure smooth transition.
+\end{figure}
 
 \subsection{Edge Cases and Erroneous Inputs}
-Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot is progressively reaching its target. In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the algorithm is run with a frame rate as high as 50 fps these instances do not matter much and are taken care of in the subsequent frames.
+Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot is progressively reaching its target.
+In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the algorithm is run with a frame rate as high as 50 fps these instances do not matter much and are taken care of in the subsequent frames.
 \\ 
 Other cases include when obstacles intersect. This may be because of the erroneous inputs if obstacles are behind one another or because of the generic assumption that obstacles all have the same radius. The fact that obstacle radius is its radius added with the half of radius of the bot itself ensures that the test subject can easily maneuver between obstacles. To solve this problem any two such intersecting obstacles are treated as one obstacle, by making a best fitting ellipse on top of the obstacles. The algorithm can be executed normally considering this new ellipse.
 
