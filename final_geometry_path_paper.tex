@@ -52,7 +52,7 @@ Motion and Trajectory Generation, Humanoid Robots, Humanoid and Bipedal Locomoti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-A basic skill in autonomous systems is the ability to reach a desired location by making collision free paths. Many path finding algorithms have been designed till date to address this issue. Once a path is made it is then mapped to the gait target vector of the humanoid robot and footsteps are planed accordingly. \\
+A basic skill in autonomous systems is the ability to reach a desired location by making collision free paths. Many path finding algorithms have been designed till date to address this issue. Once a path is made it is then mapped to the gait target vector of the humanoid robot and footsteps are planned accordingly. \\
 Mainly such prototypes have an on board processing system and thus the computational resources are compromised due to restriction in power, weight, heat dissipation issues etc. Since many situations encountered in real world scenario are dynamic, it is extremely essential that the algorithm for such calculations should be robust and computationally minimalistic. Moreover the challenge further increases due to the limited capabilities of the robot's sensors and their noise, thus limiting its ability to perceive the environment accurately.\\
 The usage scenario for our case is humanoid robot soccer at RoboCup. It presents a challenging and an interesting goal to achieve. In this paper we try to address one of the most primary higher level tasks. Once the ball position is known and the robot is localized in the environment, the most important challenge is to find the smallest trajectory from the current position to the ball avoiding opponents and the team members in the way. Once the path is known it is then simply mapped to gait generation algorithm and the bot follows the steps planned for it.\\
 However many path planning algorithms have high time and space complexity due to the formation and computation of grid-based operations. In our case we can take advantage of the fact that obstacles sizes are comparable to that of the robot itself and there are very few obstacles present on the way to the ball. The algorithm in this paper minimizes this cost and is capable of finding the most optimum path even for a large number of obstacles. To give a comprehensive solution we also try to address the issue of mapping the planned trajectory to the humanoid robot's gait generation module, i.e. footstep planning.\\
@@ -129,7 +129,7 @@ Joining line between the start and end points is not sufficient to give complete
 Another use of introduction of dummy obstacles is to start the tracing of the path smoothly. It often happens that the bot is facing a direction and need to start walking at a specified angle to the current gait vector. Since instantaneous turning of the point can prove to be difficulty or time consuming an obstacle can be placed to ensure smooth transition.
 
 \subsection{Edge Cases and Erroneous Inputs}
-Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot progressively reaching its target. In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the algorithm is run with a frame rate as high as 50 fps these instances do not matter much and are taken care of in the subsequent frames.
+Since the algorithm is dynamic some cases will arise when the robot, obstacle, ball all are very near, especially when the bot is progressively reaching its target. In such cases due to erroneous inputs from the camera, sometimes the bot or end point can be found inside the obstacle itself, making it impossible to draw tangents. Such cases are ignored and since the algorithm is run with a frame rate as high as 50 fps these instances do not matter much and are taken care of in the subsequent frames.
 \\ 
 Other cases include when obstacles intersect. This may be because of the erroneous inputs if obstacles are behind one another or because of the generic assumption that obstacles all have the same radius. This in addition to the fact that obstacles radius is its radius added with the half of radius of the bot itself so that the test subject can easily maneuver between obstacles. To solve this problem any two such intersecting obstacles are treated as one obstacle, by making a best fitting ellipse on top of the obstacles. The algorithm can be now executed normally considering this new ellipse.
 
@@ -163,29 +163,17 @@ The salient features of the modules are discussed below:
   the ground. $\theta$ describes the rotation of the foot with respect
   to the present orientation of the humanoid. 
 
-The limits on acceptable step position values arise from theoretical constraints of the implemented motion generator and the physical constraints of the humanoid. 
-In the humanoid under discussion, theoretical limits are placed on the range of attainable step positions which derive from a range of attainable velocities.
-The step planning interface is responsible for generating acceptable step positions, and the specific implementation of such an interface is discussed in the next subsection.
+The step planning interface is responsible for generating acceptable step positions which obey the theoretical constraints of the gait controller and the physical constraints of the humanoid, and the specific implementation of such an interface is discussed in the next subsection.
   	
   $S$ is presented to the Gait Generation Module as a commanded target position at the end of the step.
-  \item Although the step parameter is commanded on the free leg, the final velocity attained after the step is precomputed in order
-to present a target velocity for the support leg trajectories. In the humanoid under discussion the support leg operates on 3D LIPM trajectories parameterized by current velocity and target velocity. Therefore the commanded step position is used to compute the final velocity, which is used to generate stable 3D LIPM trajectories. 
-  
-  The present position in the trajectory is advanced with time at every frame,
-  and the new coordinates are forwarded to the Inverse Kinematics (IK) Module.
-  \item Joint angles, and the corresponding motor
-  positions are calculated by the IK as a solution to the present step
-  coordinates presented by the gait generation module at each frame. The motors
-  are then instructed to attain these values such that the desired motion can be
-  obtained.
+  \item The $S$ vector is used to parameterize the gait generation algorithms of the feet of the humanoid. In a 3D-LIPM gait, the current position and velocity being known, the support leg trajectories are predetermined. The $S$ vector is used to compute the trajectories of the free leg of the humanoid.
 \end{enumerate}
 
 The reason for such a hierarchical structure is that it allows changes at each
-tier without requiring changes to the other tiers on hierarchy. For instance,
+tier without requiring changes to the other tiers. For instance,
 the IK module can be adapted for a humanoid robot with a
 different mechanical structure, without having to change the gait generation
-module. Similarly, the present gait generation algorithm can be freely changed
-for purposes of experimentation without making any changes in the IK module. However, the step planning interface must be designed to generate acceptable step positions and may require changes depending on the gait generation algorithm being used and the mechanical limitations of the humanoid.
+module. However, the step planning interface must be designed to generate acceptable step positions and may require changes depending on the gait generation algorithm being used and the mechanical limitations of the humanoid.
 
 \subsection{Step Planning Interface}
 The step planning interface decomposes the path into discrete footsteps which result in the robot following the desired trajectory.
@@ -196,11 +184,10 @@ The path is first broken down into two components:
   \item Circular Path
 \end{itemize}
 
-When the designated trajectory is a straight line, the robot accelerates to its maximum velocity and footstep vectors are generated for the maximum step length and velocity until the distance covered by the robot is equivalent to the straight line length. 
+When the designated trajectory is a straight line, the robot accelerates to its maximum velocity and footstep vectors are generated for the maximum velocity until the distance covered by the robot is equivalent to the straight line length. 
  
 When the trajectory is circular, the step planning interface generates footstep vectors using the radius of the circle and the separation of the feet. Each step advances the angle turned by the $\theta$ component of the step vector. When the target turning angle is achieved, the robot will have traversed the circular arc with the desired turning radius. It is not possible to have a constant velocity when navigating a circular path, because the steps taken by the foot on the inner side of the circle are shorter than the outer foot. Therefore, the velocity stabilizes by oscillating between two different values. \\ 
-
-The transition between a straight line trajectory to a circular one and vice versa must be handled smoothly since at any frame the new path generated may possess a straight line or a circle. Given the present velocity and step location, the interface must generate stable transition of velocity (acceleration or deceleration) to adapt to the new trajectory. This situation is accommodated by allowing a margin of one or two steps to transition safely to the new trajectory. The inaccuracy introduced by this margin is negligible due to the high step frequency of the robot.
+The transition between a straight line trajectory to a circular one and vice versa must be handled smoothly since at any frame the new path generated may possess a straight line or a circle. Given the present velocity and step location, the interface must generate stable transition of velocity to adapt to the new trajectory. This situation is accommodated by allowing a margin of one or two steps to transition safely to the new trajectory. The inaccuracy introduced by this margin is negligible due to the high step frequency of the robot.
 
 The step planning interface needs to be constrained in some manner to prevent drastic sudden changes in the velocity of the humanoid. Since the robot is presented with an online path planner, the robot may be asked to accomodate changes in path radius at each step.
 In this humanoid, the constraints are derived from a reformulation of the standard 3D LIPM equations:
@@ -229,9 +216,7 @@ where,
   \phi=\sinh^{-1}\left(\frac{x_{i}}{A}\right)
 \end{equation}
 
- This reformulation represents a loss in generality, since it implicitly
- introduces the assumption that the humanoid only moves forward, and does not
- perform maneuvers such as a back walk. This implementation also introduces
+ This reformulation represents a loss in generality and also introduces
  certain constraints on the maximum and minimum future velocity relative to
  the present velocity. The reformulation is carried out for the purpose of deriving these constraints,
 thereby restraining the motion of the humanoid by preventing it from drastic changes in velocity. The standard LIPM equations suffice for changing the humanoid's state from stationary to a moving
@@ -243,26 +228,26 @@ The constraints are derived in
  The constraints are derived to obtain the following range:
 
  \begin{equation}
- \left(\frac{v_f}{v_d}\right)_{min} =\enspace p - \sqrt{p^2 - 1}
+ \left(\frac{v_f}{v_i}\right)_{min} =\enspace p - \sqrt{p^2 - 1}
  \end{equation}
  and
  \begin{equation}
- \left(\frac{v_f}{v_d}\right)_{max}=\enspace p
+ \left(\frac{v_f}{v_i}\right)_{max}=\enspace p
  \end{equation}
  Or,
  \begin{equation}
-(v_f)_{min}	    = \left(p - \sqrt{p^2 - 1}\right)v_d
+(v_f)_{min}	    = \left(p - \sqrt{p^2 - 1}\right)v_i
  \end{equation}
  \begin{equation}
- (v_f)_{max}=pv_d
+ (v_f)_{max}=pv_i
   \end{equation}
 
   where \begin{equation}
  p=\cosh\left(\frac{T_s}{T_c}\right)
  \end{equation}
  
-It must be noted that the above range is independent of all other earlier states, such as $v_i$ and $y_i$, which means that the range applies to any step considered independently.\\
-The footstep positions generated by a given path have been pictorially presented in Fig 4. Each circle indicates where the humanoid will place its foot. It may be observed from the image that the step lengths are considerably less along the circular arcs, showing the decreased velocity of the robot when turning. Furthermore, the first two steps on the circle possess a step length which is shorter than the maximum step length, but not as short as the step length of the feet during the circular motion. This indicates the transition from maximum velocity to the circular velocity, with two intermediate steps to smoothen the transition. If the velocity constraints described above were not in place, the circular trajectory would have resulted in an immediate velocity drop, leading to instability. Handling this transition is crucial in the scenario where the online path alternately generates a line and a circle, which would otherwise result in a sudden change from maximum velocity to circular velocity, and then back to maximum velocity. The same intermediate steps may be noted in the figure whenever the robot exits the circle.
+The above range is independent of all other earlier states, which means that the range applies to any step considered independently.\\
+The footstep positions generated by a given path have been pictorially presented in Fig 4. Each circle indicates where the humanoid will place its foot. It may be observed from the image that the step lengths are considerably less along the circular arcs, showing the decreased velocity of the robot when turning. Furthermore, the first two steps on the circle possess a step length which is shorter than the maximum step length, but not as short as the step length of the feet during the circular motion. This indicates the transition from maximum velocity to the circular velocity, with two intermediate steps to facilitate the transition. If the velocity constraints described above were not in place, the circular trajectory would have resulted in an immediate velocity drop, leading to instability. Handling this transition is crucial in the scenario where the online path alternately generates a line and a circle, which would otherwise result in a sudden change from maximum velocity to circular velocity, and then back to maximum velocity.
 \begin{figure}[h]  
 \begin{center}  
 \includegraphics[scale=01.0]{footstep.jpg}  
@@ -279,14 +264,12 @@ Visibility graph in this case consists of $(4*n+2)$ number of points in the wors
 \end{center}  
 \end{figure}
 The footstep planning interface along with the path planning were integrated with the behavior layer of the humanoid for testing purposes. For the experimental setup, two obstacles of radius 15 cm each were placed in the way of the bot and the ball. The bot had to navigate its way around the obstacles and align itself to hit the ball towards the goalposts. Both the scenarios where obstacles were static and dynamic were devised to test the efficacy of the algorithm. The tests were conducted for a total of more than 200 configurations in both cases. The advantages which were very apparent that the bot was able to correct its trajectory when it lost track of the path, due to losing its stability or some mechanical disturbances like friction. In the dynamic scenario some oscillation at a point were observed where the robot has to choose between two equally probable paths. Such edge cases can be easily be solved by either random selection or adjusting the frequency of mapping final path to the gait vector.\\
-
 \begin{figure}[h]  
 \begin{center}  
 \includegraphics[width=8cm, height = 7cm]{test2.jpg}  
 \caption{\small \sl Time dependency of the algorithm on the number of obstacles in the robot's way. \label{fig:test2}}  
 \end{center}  
 \end{figure}
-
 The number of obstacles particularly in Robocup are small. There can be at a time a maximum of 3 obstacles. The worst case scenario that all three obstacles are in the robot's way, would involve the calculation of shortest path algorithm on a visibility graph consisting of just 14 points. When tested on the actual platform with 3 obstacles the average time taken to calculate was around 4 ms. This time is sufficient to give the entire cognition module a frame rate of 50 fps. Thus at such high frame rates, the dynamic nature of the obstacles is easily taken care of. The noise from the sensors like camera and the deviation of walk are thus handled naturally as a result of this. Fig. 5 shows the results of using the algorithm for an arbitrary configuration that might occur in a technical challenge in Robocup where the bot has to navigate its way and dribble a ball along with it. Testing this algorithm for up to 100 obstacles between the robot and its target gave the results as shown in Fig 6.
  
 
