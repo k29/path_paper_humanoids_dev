@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 03:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 03:32
 entering extended mode
 **final_geometry_path_paper.tex
 
@@ -366,14 +366,9 @@ Package pdftex.def Info: intersection1.JPG used on input line 135.
 (pdftex.def)             Requested size: 188.70454pt x 158.5921pt.
 
 [3 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/p
-ath_paper.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
-
- []
-
-[4 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/o
-rientation_circle2.JPG> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning pap
-er, Humanoids Korea/intersection1.JPG>]
+ath_paper.jpg>] [4 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, H
+umanoids Korea/orientation_circle2.JPG> <C:/Users/Kaustubh/Documents/ieeeconf/P
+ath planning paper, Humanoids Korea/intersection1.JPG>]
 <footstep.jpg, id=36, 272.51813pt x 231.11343pt>
 File: footstep.jpg Graphic file (type jpg)
  <use footstep.jpg>
@@ -407,30 +402,27 @@ File: testbed.jpg Graphic file (type jpg)
 Package pdftex.def Info: testbed.jpg used on input line 269.
 (pdftex.def)             Requested size: 199.94345pt x 118.64114pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 []\OT1/ptm/m/n/10 Artificial Po-ten-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 
  []
 
-[6 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/t
-estbed.jpg>]
 Missing character: There is no Ã in font ptmri7t!
 Missing character: There is no ¼ in font ptmri7t!
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -442,9 +434,8 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7
-
-]
+[6 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/t
+estbed.jpg>]
 ("C:\Users\Kaustubh\Documents\ieeeconf\Path planning paper, Humanoids Korea\fin
 al_geometry_path_paper.aux") ) 
 Here is how much of TeX's memory you used:
@@ -473,9 +464,9 @@ fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
 /utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on final_geometry_path_paper.pdf (7 pages, 472169 bytes).
+Output written on final_geometry_path_paper.pdf (6 pages, 471267 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 98 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

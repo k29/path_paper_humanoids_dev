@@ -190,7 +190,7 @@ The step planning interface needs to be constrained in some manner to prevent dr
 In this humanoid, the constraints are derived from a reformulation of the standard 3D LIPM equations:
 
 3D Linear Inverted Pendulum Model describes the motion of the Centre of Mass (CoM) in the robot[12]. The motion of support leg is opposite of the CoM, since the support leg behaves as a pivot which moves the CoM of the robot. Therefore the 3D LIPM algorithm can be used to develop a relation between step lengths and CoM velocities. The motion of the robot's supporting leg is defined by the x-variable in the Eq 1. $T_{c}$ and $T_{s}$ are constants, $T_{s}$ being the SSP time of the robot. $T_{c}$  is the time constant of the inverted pendulum, and is computed using the physical dimensions of the humanoid followed by experimental tuning. The initial and final states of the bot (before and after the step) are represented by i and f. Velocity and position are denoted by $v$ and $x$.
-\\
+
 
 \begin{equation}
 \left(\begin{array}{c}x_{f}\\\\ v_{f}\end{array}\right)=\left(\begin{array}{cc}\cosh\left(\frac{T_{s}}{T_{c}}\right) & T_{c}\sinh\left(\frac{T_{s}}{T_{c}}\right) \\\\ \frac{\sinh\left(\frac{T_{s}}{T_{c}}\right)}{T_{c}} & \cosh\left(\frac{T_{s}}{T_{c}}\right)\end{array}\right)\left(\begin{array}{c}x_{i}\\\\ v_{i}\end{array}\right)
@@ -274,25 +274,26 @@ The number of obstacles particularly in Robocup are small. In the worst case sce
 
 
 \section{Comparison}
-The algorithm presented here is compared with the other standard planning algorithms in terms of time taken, and no. of operations. The algorithm discussed in this paper is applicable to very specific cases, especially when the size of the obstacle is comparable to that of the robot itself. One of the main advantages of this geometry based planning algorithm is the non dependency on grids.Usually algorithms based on grids computationally expensive or do not have high resolution. The algorithm presented works in a grid less environment and only considers the nodes of interest, instead of analyzing each and every point on the map.
-\\
-\begin{center} 
-    \begin{tabular}{| p{3cm} | l | }
-    \hline
-    \textbf{Algorithm} & \textbf{Time (ms)}  \\ \hline
-    Geometry based & 3.6 \\ \hline
-    $A^{*}$,  & 5 \\ \hline
-    Breadth First Search & 13 \\
-    \hline
-    Best First Search & 5   \\ \hline
-    Dijkstra & 18 \\ \hline
-    Artificial Potential Mapping & 6 \\ \hline
-    \end{tabular}
-\end{center}
-\begin{center}
-\small{Table 1: Comparison of Various Path Planning Algorithms\\}
-\end{center}
- Moreover it is not restricted to frame area of any size whatsoever, meaning the obstacles, final position can be located anywhere with reference to the navigating object without any cost to computation.\\
+The algorithm presented here is compared with the other standard planning algorithms in terms of time taken, and no. of operations. The algorithm discussed in this paper is applicable to very specific cases, especially when the size of the obstacle is comparable to that of the robot itself. One of the main advantages of this geometry based planning algorithm is the non dependency on grids.
+
+ Moreover it is not restricted to frame area of any size whatsoever, meaning the obstacles, final position can be located anywhere with reference to the navigating object without any cost to computation.
+ \\
+ \begin{center} 
+     \begin{tabular}{| p{3cm} | l | }
+     \hline
+     \textbf{Algorithm} & \textbf{Time (ms)}  \\ \hline
+     Geometry based & 3.6 \\ \hline
+     $A^{*}$,  & 5 \\ \hline
+     Breadth First Search & 13 \\
+     \hline
+     Best First Search & 5   \\ \hline
+     Dijkstra & 18 \\ \hline
+     Artificial Potential Mapping & 6 \\ \hline
+     \end{tabular}
+ \end{center}
+ \begin{center}
+ \small{Table 1: Comparison of Various Path Planning Algorithms\\}
+ \end{center}
 For comparing this algorithm with the other standard ones in the literature we considered the setup of 2 obstacles along the way to the final point as shown in Fig. 6. The results of the comparison are as tabulated in Table 1.\\
 
 
