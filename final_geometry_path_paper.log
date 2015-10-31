@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  27 OCT 2015 15:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.10)  31 OCT 2015 10:17
 entering extended mode
 **G:/My*Box*Files/Default*Sync*Folder/Git/path_paper_humanoids_dev/final_geomet
 ry_path_paper.tex
@@ -344,46 +344,57 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <path_paper.jpg, id=11, 1345.025pt x 399.4925pt>
 File: path_paper.jpg Graphic file (type jpg)
  <use path_paper.jpg>
-Package pdftex.def Info: path_paper.jpg used on input line 114.
+Package pdftex.def Info: path_paper.jpg used on input line 112.
 (pdftex.def)             Requested size: 505.88135pt x 156.49026pt.
  [2]
 <orientation_circle2.JPG, id=19, 595.47469pt x 550.30594pt>
 File: orientation_circle2.JPG Graphic file (type jpg)
 
 <use orientation_circle2.JPG>
-Package pdftex.def Info: orientation_circle2.JPG used on input line 126.
+Package pdftex.def Info: orientation_circle2.JPG used on input line 124.
 (pdftex.def)             Requested size: 250.09766pt x 231.12692pt.
 
-Overfull \hbox (4.37955pt too wide) in paragraph at lines 126--127
+Overfull \hbox (4.37955pt too wide) in paragraph at lines 124--125
  [] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 127.
+(Font)              <9> on input line 125.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 <intersection1.JPG, id=21, 754.82pt x 634.37pt>
 File: intersection1.JPG Graphic file (type jpg)
  <use intersection1.JPG>
-Package pdftex.def Info: intersection1.JPG used on input line 140.
+Package pdftex.def Info: intersection1.JPG used on input line 138.
 (pdftex.def)             Requested size: 226.44775pt x 190.31245pt.
 
-[3 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/path_paper
-.jpg> <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/orienta
-tion_circle2.JPG>] [4 <G:/My Box Files/Default Sync Folder/Git/path_paper_human
-oids_dev/intersection1.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/path_pape
+r.jpg> <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/orient
+ation_circle2.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+[4 <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/intersecti
+on1.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 <footstep.jpg, id=33, 272.51813pt x 231.11343pt>
 File: footstep.jpg Graphic file (type jpg)
  <use footstep.jpg>
-Package pdftex.def Info: footstep.jpg used on input line 267.
+Package pdftex.def Info: footstep.jpg used on input line 268.
 (pdftex.def)             Requested size: 272.51746pt x 231.11287pt.
 
-Overfull \hbox (26.79935pt too wide) in paragraph at lines 267--268
+Overfull \hbox (26.79935pt too wide) in paragraph at lines 268--269
  [] 
  []
 
@@ -393,30 +404,30 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <test1.JPG, id=34, 828.09375pt x 663.47874pt>
 File: test1.JPG Graphic file (type jpg)
  <use test1.JPG>
-Package pdftex.def Info: test1.JPG used on input line 276.
+Package pdftex.def Info: test1.JPG used on input line 277.
 (pdftex.def)             Requested size: 248.43004pt x 199.04515pt.
 
-Overfull \hbox (2.71193pt too wide) in paragraph at lines 276--277
+Overfull \hbox (2.71193pt too wide) in paragraph at lines 277--278
  [] 
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 273--281
+Underfull \hbox (badness 1661) in paragraph at lines 274--282
  \OT1/ptm/m/n/10 The foot-step plan-ning in-ter-face along with the path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--281
+Underfull \hbox (badness 10000) in paragraph at lines 274--282
 
  []
 
 [5] <test2.jpg, id=41, 2265.46375pt x 1324.95pt>
 File: test2.jpg Graphic file (type jpg)
  <use test2.jpg>
-Package pdftex.def Info: test2.jpg used on input line 284.
+Package pdftex.def Info: test2.jpg used on input line 285.
 (pdftex.def)             Requested size: 227.5967pt x 199.15848pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
 
  []
 
@@ -424,22 +435,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--295
 pg> <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/test1.JPG
 > <G:/My Box Files/Default Sync Folder/Git/path_paper_humanoids_dev/test2.jpg>]
 
-Underfull \hbox (badness 2351) in paragraph at lines 298--298
+Underfull \hbox (badness 2351) in paragraph at lines 299--299
 []\OT1/ptm/b/n/10 No. of Op-er-a-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--305
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []\OT1/ptm/m/n/10 Artificial Po-ten-tial
  []
 
 <testbed.jpg, id=45, 499.8675pt x 296.60812pt>
 File: testbed.jpg Graphic file (type jpg)
  <use testbed.jpg>
-Package pdftex.def Info: testbed.jpg used on input line 314.
+Package pdftex.def Info: testbed.jpg used on input line 315.
 (pdftex.def)             Requested size: 199.94345pt x 118.64114pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
 
  []
 
@@ -461,10 +472,10 @@ g>]
 ("G:\My Box Files\Default Sync Folder\Git\path_paper_humanoids_dev\final_geomet
 ry_path_paper.aux") ) 
 Here is how much of TeX's memory you used:
- 4109 strings out of 493921
- 62605 string characters out of 3147279
+ 4106 strings out of 493921
+ 62561 string characters out of 3147279
  131181 words of memory out of 3000000
- 7373 multiletter control sequences out of 15000+200000
+ 7370 multiletter control sequences out of 15000+200000
  42888 words of font info for 83 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,10n,38p,1235b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -484,7 +495,7 @@ ts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
 s/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final_geometry_path_paper.pdf (7 pages, 613321 bytes).
+Output written on final_geometry_path_paper.pdf (7 pages, 613248 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
