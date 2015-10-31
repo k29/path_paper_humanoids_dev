@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 02:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  1 NOV 2015 02:57
 entering extended mode
 **final_geometry_path_paper.tex
 
@@ -355,7 +355,7 @@ File: orientation_circle2.JPG Graphic file (type jpg)
 
 <use orientation_circle2.JPG>
 Package pdftex.def Info: orientation_circle2.JPG used on input line 122.
-(pdftex.def)             Requested size: 238.18565pt x 220.11847pt.
+(pdftex.def)             Requested size: 208.41925pt x 192.60995pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 123.
  [2]
@@ -363,29 +363,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: intersection1.JPG Graphic file (type jpg)
  <use intersection1.JPG>
 Package pdftex.def Info: intersection1.JPG used on input line 135.
-(pdftex.def)             Requested size: 226.44775pt x 190.31245pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+(pdftex.def)             Requested size: 188.70454pt x 158.5921pt.
 
 [3 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/p
-ath_paper.jpg> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Human
-oids Korea/orientation_circle2.JPG>]
+ath_paper.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
-[4 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/i
-ntersection1.JPG>] <footstep.jpg, id=36, 272.51813pt x 231.11343pt>
+[4 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/o
+rientation_circle2.JPG> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning pap
+er, Humanoids Korea/intersection1.JPG>]
+<footstep.jpg, id=36, 272.51813pt x 231.11343pt>
 File: footstep.jpg Graphic file (type jpg)
-
-<use footstep.jpg>
+ <use footstep.jpg>
 Package pdftex.def Info: footstep.jpg used on input line 250.
-(pdftex.def)             Requested size: 272.51746pt x 231.11287pt.
-
-Overfull \hbox (26.79935pt too wide) in paragraph at lines 250--251
- [] 
- []
+(pdftex.def)             Requested size: 218.01479pt x 184.89099pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -394,18 +387,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: test1.JPG Graphic file (type jpg)
  <use test1.JPG>
 Package pdftex.def Info: test1.JPG used on input line 259.
-(pdftex.def)             Requested size: 248.43004pt x 199.04515pt.
-
-Overfull \hbox (2.71193pt too wide) in paragraph at lines 259--260
- [] 
- []
-
-[5 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/f
-ootstep.jpg> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoi
-ds Korea/test1.JPG>] <testbed.jpg, id=41, 499.8675pt x 296.60812pt>
+(pdftex.def)             Requested size: 207.02293pt x 165.86928pt.
+ [5 <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humanoids Korea/
+footstep.jpg> <C:/Users/Kaustubh/Documents/ieeeconf/Path planning paper, Humano
+ids Korea/test1.JPG>] <testbed.jpg, id=41, 499.8675pt x 296.60812pt>
 File: testbed.jpg Graphic file (type jpg)
-
-<use testbed.jpg>
+ <use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 268.
 (pdftex.def)             Requested size: 199.94345pt x 118.64114pt.
 
@@ -470,7 +457,7 @@ fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
 /utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on final_geometry_path_paper.pdf (7 pages, 472707 bytes).
+Output written on final_geometry_path_paper.pdf (7 pages, 472764 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
